@@ -1,0 +1,15 @@
+{% extends "layout.html" %} <!--This is template inheritance. At the start of home there will be layout page part-->
+{% block content %}
+	{% for post in posts%} <!--This is how we use a for loop in out HTML Template-->
+	<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+      <a class="mr-2" href="#">{{ post.author }}</a>
+      <small class="text-muted">{{ post.date_posted }}</small>
+    </div>
+    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+    <p class="article-content">{{ post.content }}</p>
+  </div>
+</article>
+	{%endfor%}
+{% endblock content %} <!--We put the name of this block i.e. content to explicitly specify our block-->
